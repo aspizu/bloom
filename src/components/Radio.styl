@@ -1,0 +1,53 @@
+w = 1.25rem
+
+.radio
+  box()
+  justify-content: center
+  align-items: center
+  width: w
+  height: w
+  background: #232323
+  shadow = \
+    0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.15),
+    0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.25)
+  shadowBorder(color)
+    return inset 0 0 0 0.08rem color
+  box-shadow: shadow, shadowBorder(#6b6b6b)
+  border-radius: 999px
+  transition: all 300ms easeInOutQuart
+
+  &:hover
+    background: #2c2c2c
+
+  &--disabled&
+    background: #2c2c2c
+    box-shadow: shadowBorder(#4f4f4f)
+
+  &--active&
+    background: accent
+    box-shadow: shadow
+
+  &--disabled&--active&
+    background: #6e6e6e
+    box-shadow: none
+
+  &__inner
+    transition: all 300ms easeInOutQuart
+    width: 0.75rem
+    height: 0.75rem
+    border-radius: 999px
+    scale: 0
+    background: #a9a9a9
+    opacity: 0
+
+    ^[0]:hover &:not(^[0]--active):not(^[0]--disabled)
+      scale: 0.75
+      opacity: 1
+
+    ^[0]--active&
+      background: black
+      scale: 1
+      opacity: 1
+    
+    ^[0]--active^[0]--disabled&
+      background: #c4c4c4

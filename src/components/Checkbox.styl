@@ -1,0 +1,52 @@
+w = 1.25rem
+
+.checkbox
+  box()
+  justify-content: center
+  align-items: center
+  width: w
+  height: w
+  background: #232323
+  shadow = \
+    0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.15),
+    0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.25)
+  shadowBorder(color)
+    return inset 0 0 0 0.08rem color
+  box-shadow: shadow, shadowBorder(#6b6b6b)
+  border-radius: 0.3rem
+  transition: all 300ms easeInOutQuart
+
+  &:hover
+    background: #2c2c2c
+
+  &--disabled&
+    background: #2c2c2c
+    box-shadow: shadowBorder(#4f4f4f)
+
+  &--active&
+    background: accent
+    box-shadow: shadow
+
+    &:hover
+      background: darken(accent, 10%)
+
+    &:active
+      background: darken(accent, 15%)
+
+  &--disabled&--active&
+    background: #6e6e6e
+    box-shadow: none
+
+  &__inner
+    user-select: none
+    materialSymbolsOutlined()
+    font-size: 1.25rem
+    clip-path: inset(0 1.25rem 0 0)
+    transition: all 300ms easeInOutQuart
+    color: black
+
+    ^[0]--active&
+      clip-path: inset(0 0 0 0)
+    
+    ^[0]--active^[0]--disabled&
+      color: #c4c4c4

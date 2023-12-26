@@ -1,0 +1,55 @@
+w = 2.5rem
+h = 1rem
+p = 0.25rem
+
+.switch
+  width: p + w + p
+  height: p + h + p
+  padding: p
+  border-radius: 999px
+  background: #1f1f1f
+  shadow = \
+    0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.15),
+    0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.25)
+  shadowBorder(color)
+    return inset 0 0 0 0.08rem color
+  box-shadow: shadow, shadowBorder(#8d8d8d)
+  position: relative
+  transition: all 300ms easeInOutQuart
+
+  &:hover
+    background: #2c2c2c
+
+  &--disabled&
+    background: #2a2a2a
+    box-shadow: shadowBorder(#5a5a5a)
+
+  &--active&
+   background: accent
+   box-shadow: shadow
+
+  &--disabled&--active&
+    background: #5a5a5a
+    box-shadow: none
+
+  &__inner
+    position: absolute
+    width: h
+    height: h
+    background: #e3e3e3
+    border-radius: 999px
+    transition: all 300ms cubic-bezier(0.76, 0, 0.24, 1)
+    left: p
+
+    ^[0]--disabled&
+      background: #7f7f7f
+
+    ^[0]:hover &:not(^[0]--disabled)
+      scale: 1.1
+
+    ^[0]--active&
+      background: black
+      left: w - h + p
+    
+    ^[0]--disabled^[0]--active&
+      background: #8d8d8d

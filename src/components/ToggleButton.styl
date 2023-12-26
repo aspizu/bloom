@@ -1,0 +1,56 @@
+.toggle-button
+  box()
+  position: relative
+  align-items: center
+  justify-content: center
+  color: white
+  border: none
+  border-radius: 0.3rem
+  transition: all 200ms easeInOutQuart
+  background: #494949
+  box-shadow:
+    0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.2),
+    0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.1)
+  user-select: none
+  padding: 0.5rem 0.8rem
+  gap: 0.5rem
+
+  &--icon-left&
+    padding: 0.22rem 0.8rem
+    padding-left: 0.7rem
+    gap: 0.5rem
+
+  &--icon-right&
+    padding: 0.22rem 0.8rem
+    padding-right: 0.7rem
+    gap: 0.5rem
+
+  &:hover
+    background: #575757
+
+  &:active, &--active&
+    background: #424242
+    color: accent
+
+  &--disabled&
+    color: #a4a4a4
+    background: #494949
+    box-shadow: none
+
+  &--accent&
+    color: black
+    background: accent
+    font-weight: 500
+
+    &:hover
+      background: darken(accent, 15%)
+    
+    &:active
+      background: darken(accent, 25%)
+
+  &--accent&--disabled&
+    background: #737373
+    box-shadow: none
+
+  &--accent&--active&
+    background: darken(accent, 25%)

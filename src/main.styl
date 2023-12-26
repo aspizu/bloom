@@ -1,0 +1,97 @@
+accent = #25e6ff
+easeInOutQuart = cubic-bezier(0.76, 0, 0.24, 1)
+
+:root
+  color: white
+
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  font-family: Inter
+  font-size: 14px
+
+
+::selection
+  color: black
+  background: accent
+
+
+a
+  display: inline-flex
+
+
+h1
+  font-size: 1.25rem
+  font-weight: 400
+
+
+h2
+  font-size: 1.1rem
+  font-weight: 400
+
+
+body
+  background: #1e1e1e
+
+
+box(direction = "")
+  display: flex
+  if direction != ""
+    flex-direction: direction
+
+
+.flexpander
+  flex-grow: 999
+
+
+::-webkit-scrollbar
+  width: 0.4rem
+  height: 0.4rem
+
+::-webkit-scrollbar-thumb:hover ::-webkit-scrollbar
+  width: 1rem
+
+::-webkit-scrollbar-track
+  background: none
+
+
+::-webkit-scrollbar-thumb
+  background: rgba(255, 255, 255, 0.25)
+  border-radius: 999px
+
+  &:hover
+    background: rgba(255, 255, 255, 0.5)
+
+
+::-webkit-scrollbar-corner
+  background: none
+
+
+materialSymbolsOutlined(wght = 300)
+  font-family: Material Symbols Outlined
+  font-variation-settings:
+  'FILL' 0,
+  'wght' wght,
+  'GRAD' 0,
+  'opsz' 24
+
+
+@import "components/Badge"
+@import "components/Box"
+@import "components/Button"
+@import "components/Checkbox"
+@import "components/Icon"
+@import "components/IconButton"
+@import "components/Input"
+@import "components/Link"
+@import "components/Menu"
+@import "components/MenuItem"
+@import "components/Radio"
+@import "components/Separator"
+@import "components/Switch"
+@import "components/Tab"
+@import "components/Table"
+@import "components/Text"
+@import "components/ToggleButton"

@@ -1,0 +1,30 @@
+.input
+  box()
+  align-items: center
+  background: #3c3c3c
+  border-radius: 0.3rem
+  transition: all 200ms easeInOutQuart
+  boxShadow(color, underline)
+    return \
+      inset 0 -0.8rem 0px -0.7rem underline \,
+      inset 0 0 0 0.08rem color \,
+      0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.2) \,
+      0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.1)
+  //#4c4c4c
+  box-shadow: boxShadow(transparent, #cdcdcd)
+  gap: 0.4rem
+  padding-right: 0.4rem
+
+  &:hover
+    background: #3f3f3f
+
+  &:focus-within
+    box-shadow: boxShadow(#4a4a4a, accent)
+    background: #2a2a2a
+
+  &__input
+    color: white
+    background: none
+    border: none
+    outline: none
+    padding: 0.5rem

@@ -1,0 +1,22 @@
+.tab
+  box()
+  align-items: center
+  color: white
+  border: none
+  background: none
+  padding: 0.25rem 1rem
+  gap: 0.5rem
+  border-radius: 0.3rem
+  transition: all 200ms easeInOutQuart
+
+  &--icon-left&
+    padding-left: 0.25rem
+  
+  &--icon-right&
+    padding-right: 0.25rem
+
+  &:hover, &--active&
+    background: #2f2f2f
+
+  &:active:not(&--active&)
+    background: #363636

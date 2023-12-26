@@ -1,0 +1,73 @@
+.icon-button
+  materialSymbolsOutlined()
+  box()
+  align-items: center
+  justify-content: center
+  color: white
+  border: none
+  border-radius: 0.3rem
+  transition: all 200ms easeInOutQuart
+  background: #494949
+  box-shadow:
+    0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.2),
+    0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.1)
+  user-select: none
+  width: 2.25rem
+  height: 2.25rem
+  font-size: 1.5rem
+
+  &--inverted&
+    color: black
+
+  &--sm&
+    width: 1.5rem
+    height: 1.5rem
+    font-size: 1.25rem
+
+  &:hover
+    background: #575757
+
+  &:active
+    background: #424242
+
+  &--disabled&
+    color: #a4a4a4
+    background: #494949
+    box-shadow: none
+
+  &--accent&
+    color: black
+    background: accent
+
+    &:hover
+      background: darken(accent, 15%)
+    
+    &:active
+      background: darken(accent, 25%)
+
+  &--overlay&
+    background: none
+    box-shadow: none
+
+    &:hover
+      background: rgba(255, 255, 255, 0.1)
+    
+    &:active
+      background: rgba(255, 255, 255, 0.2)
+
+  &--overlay&--inverted&
+    background: none
+    box-shadow: none
+
+    &:hover
+      background: rgba(0, 0, 0, 0.1)
+    
+    &:active
+      background: rgba(0, 0, 0, 0.2)
+  
+  &--overlay&--disabled&
+    background: none
+
+  &--accent&--disabled&
+    background: #737373
+    box-shadow: none

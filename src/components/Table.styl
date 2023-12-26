@@ -1,0 +1,30 @@
+.table
+  display: grid
+  gap: 0.5rem
+
+  &__column
+    font-weight: 500
+    text-align: left
+    color: white
+    padding: 0.25rem
+    border: none
+    border-radius: 0.3rem
+    transition: all 300ms easeInOutQuart
+    background: none
+    &:hover
+      background: #252525
+    &:active
+      background: #292929
+
+  &__cell
+    border-radius: 0.3rem
+
+  
+  &__handle
+    width: 100%
+    background: #383838
+    border: none
+    cursor: ew-resize
+
+    &:hover
+      background: #5a5a5a
