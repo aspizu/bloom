@@ -1,5 +1,5 @@
 accent = #25e6ff
-easeInOutQuart = cubic-bezier(0.76, 0, 0.24, 1)
+
 
 :root
   color: white
@@ -13,6 +13,9 @@ easeInOutQuart = cubic-bezier(0.76, 0, 0.24, 1)
   font-size: 14px
 
 
+@import "animations"
+
+
 ::selection
   color: black
   background: accent
@@ -20,16 +23,7 @@ easeInOutQuart = cubic-bezier(0.76, 0, 0.24, 1)
 
 a
   display: inline-flex
-
-
-h1
-  font-size: 1.25rem
-  font-weight: 400
-
-
-h2
-  font-size: 1.1rem
-  font-weight: 400
+  text-decoration: none
 
 
 body
@@ -50,8 +44,6 @@ box(direction = "")
   width: 0.4rem
   height: 0.4rem
 
-::-webkit-scrollbar-thumb:hover ::-webkit-scrollbar
-  width: 1rem
 
 ::-webkit-scrollbar-track
   background: none
@@ -82,12 +74,16 @@ materialSymbolsOutlined(wght = 300)
 @import "components/Box"
 @import "components/Button"
 @import "components/Checkbox"
+@import "components/Drawer"
 @import "components/Icon"
 @import "components/IconButton"
+@import "components/Image"
 @import "components/Input"
 @import "components/Link"
 @import "components/Menu"
 @import "components/MenuItem"
+@import "components/Modal"
+@import "components/PaletteButton"
 @import "components/Radio"
 @import "components/Separator"
 @import "components/Switch"

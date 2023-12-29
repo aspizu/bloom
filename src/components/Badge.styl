@@ -1,23 +1,50 @@
 .badge
   box()
   align-items: center
-  gap: 0.5rem
   font-weight: 500
   color: black
   background: #ffffff
   padding: 0.25rem 0.5rem
+  gap: 0.5rem
   border-radius: 0.3rem
+
+  &--sm&
+    padding: 0.2rem 0.4rem
+    gap: 0.4rem
+    font-size: 0.9rem
 
   &--icon-left&
     padding-left: 0.25rem
   
+  &--sm&--icon-left&
+    padding-left: 0.2rem
+  
   &--icon-right&
     padding-right: 0.25rem
+
+  &--sm&--icon-right&
+    padding-right: 0.2rem
 
   &--link&
     background: rgba(255, 255, 255, 0.08)
     color: accent
 
+    &:hover
+      background: rgba(255, 255, 255, 0.2)
+
+    &:active
+      background: rgba(255, 255, 255, 0.3)
+
   &--accent&
-    background: transparentify(accent, 25%)
+    background: accent
+    color: black
+  
+  &--inverted&
+    background: black
     color: white
+
+  &--button&:hover
+    filter: brightness(1.1)
+
+  &--button&:active
+    filter: brightness(1.2)

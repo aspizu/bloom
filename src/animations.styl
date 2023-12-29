@@ -1,0 +1,71 @@
+animationDuration = 400ms
+easeInOutQuart = cubic-bezier(0.76, 0, 0.24, 1)
+
+@keyframes FadeIn
+  from
+    opacity: 0
+  
+  to
+    opacity: 1
+
+.fade-in
+  animation: animationDuration easeInOutQuart FadeIn 
+
+@keyframes FadeOut
+  from
+    opacity: 1
+  
+  to
+    opacity: 0
+
+.fade-out
+  animation: animationDuration easeInOutQuart FadeOut
+
+@keyframes ScaleUpIn
+  from
+    scale: 0
+    opacity: 0
+  
+  to
+    scale: 1
+    opacity: 1
+
+.scale-up-in
+  animation: animationDuration easeInOutQuart ScaleUpIn
+
+@keyframes ScaleDownIn
+  from
+    scale: 2
+    opacity: 0
+  
+  to
+    scale: 1
+    opacity: 1
+
+.scale-down-in
+  animation: animationDuration easeInOutQuart ScaleDownIn
+
+@keyframes ScaleUpOut
+  from
+    scale: 1
+    opacity: 1
+  
+  to
+    scale: 2
+    opacity: 0
+
+.scale-up-out
+  animation: animationDuration easeInOutQuart ScaleUpOut
+
+
+@keyframes ScaleDownOut
+  from
+    scale: 1
+    opacity: 1
+  
+  to
+    scale: 0
+    opacity: 0
+
+.scale-down-out
+  animation: animationDuration easeInOutQuart ScaleDownOut

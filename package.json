@@ -1,22 +1,29 @@
 {
-  "name": "bloom",
-  "private": true,
-  "version": "0.1.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build"
-  },
-  "dependencies": {
-    "@preact/signals": "^1.2.2",
-    "deepsignal": "^1.3.6",
-    "preact": "^10.19.3"
-  },
-  "devDependencies": {
-    "@preact/preset-vite": "^2.7.0",
-    "sass": "^1.69.5",
-    "stylus": "^0.62.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.10"
-  }
+    "name": "bloom",
+    "private": false,
+    "version": "0.1.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build"
+    },
+    "dependencies": {
+        "@preact/compat": "^17.1.2",
+        "@preact/signals": "^1.2.2",
+        "deepsignal": "^1.3.6",
+        "preact": "^10.19.3"
+    },
+    "devDependencies": {
+        "@preact/preset-vite": "^2.7.0",
+        "stylus": "^0.62.0",
+        "typescript": "^5.3.3",
+        "vite": "^5.0.10"
+    },
+    "exports": {
+        "./components/*": "./src/components/*.tsx",
+        "./stylesheet": "./src/main.styl",
+        "./itertools": "./src/itertools.ts",
+        "./functools": "./src/functools.ts",
+        "./ViewTransition": "./src/ViewTransition.tsx"
+    }
 }

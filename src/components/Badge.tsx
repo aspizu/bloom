@@ -1,22 +1,33 @@
 import { HTMLProps } from "preact/compat"
 import component from "../component"
 
-export interface BadgeProps extends HTMLProps<HTMLSpanElement> {
-  class?: string
-  variant?: "link" | "accent"
-  iconLeft?: boolean
-  iconRight?: boolean
+export interface BadgeProps extends Omit<HTMLProps<HTMLSpanElement>, "size"> {
+    class?: string
+    variant?: "link" | "accent" | "inverted"
+    iconLeft?: boolean
+    iconRight?: boolean
+    size?: "sm"
+    button?: boolean
 }
 
-export default function Badge(props: BadgeProps) {
-  const { class: className, children, variant, iconLeft, iconRight } = props
-  const $ = component(className, "Badge", variant, {
+export default function Badge({
+    class: className,
+    children,
+    variant,
     iconLeft,
     iconRight,
-  })
-  return (
-    <span {...props} class={$()}>
-      {children}
-    </span>
-  )
+    size,
+    button,
+    ...props
+}: BadgeProps) {
+    const $ = component(className, "Badge", variant, size, {
+        iconLeft,
+        iconRight,
+        button,
+    })
+    return (
+        <span {...props} class={$()}>
+            {children}
+        </span>
+    )
 }

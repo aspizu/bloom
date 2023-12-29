@@ -2,15 +2,18 @@ import { HTMLProps } from "preact/compat"
 import component from "../component"
 
 export interface MenuProps extends HTMLProps<HTMLDivElement> {
-  class?: string
+    class?: string
 }
 
-export default function Menu(props: MenuProps) {
-  const { class: className, children } = props
-  const $ = component(className, "Menu")
-  return (
-    <div {...props} class={$()}>
-      {children}
-    </div>
-  )
+export default function Menu({
+    class: className,
+    children,
+    ...props
+}: MenuProps) {
+    const $ = component(className, "Menu")
+    return (
+        <div {...props} class={$()}>
+            {children}
+        </div>
+    )
 }
