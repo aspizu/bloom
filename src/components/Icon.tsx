@@ -8,7 +8,7 @@ export interface IconProps extends Omit<HTMLProps<HTMLDivElement>, "size"> {
     size?: "sm"
 }
 
-export default function Icon({
+export function Icon({
     class: className,
     children,
     color,

@@ -1,11 +1,11 @@
 import component from "../component"
-import Box, { BoxProps } from "./Box"
+import { Box, BoxProps } from "./Box"
 
 export interface DrawerProps extends BoxProps {
     onClose: () => void
 }
 
-export default function Drawer({ children, onClose, ...props }: DrawerProps) {
+export function Drawer({ children, onClose, ...props }: DrawerProps) {
     const $ = component(undefined, "Drawer")
     return (
         <div class={$()}>

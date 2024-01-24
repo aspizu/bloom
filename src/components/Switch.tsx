@@ -9,7 +9,7 @@ export interface SwitchProps extends HTMLProps<HTMLDivElement> {
     onChange?: () => void
 }
 
-export default function Switch({
+export function Switch({
     class: className,
     active = false,
     disabled = false,

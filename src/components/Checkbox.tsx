@@ -8,7 +8,7 @@ export interface CheckboxProps extends HTMLProps<HTMLDivElement> {
     onChange?: () => void
 }
 
-export default function Checkbox({
+export function Checkbox({
     class: className,
     active = false,
     disabled = false,

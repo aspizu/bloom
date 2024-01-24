@@ -1,6 +1,7 @@
 import { Signal, useSignal } from "@preact/signals"
-import { ComponentChild } from "preact"
+import { ComponentChild, ComponentChildren } from "preact"
 import { CSSProperties } from "preact/compat"
+import { useRef, useState } from "preact/hooks"
 
 export interface ViewTransitionProps {
     class?: string
@@ -75,6 +76,41 @@ export interface OptionTransitionProps {
     inline?: boolean
 }
 
+export function Transition({
+    children,
+    show,
+    inClass,
+    outClass,
+    inline = false,
+}: {
+    children: ComponentChildren
+    show: unknown
+    inClass: string
+    outClass: string
+    inline?: boolean
+}) {
+    const [state, setState] = useState(0)
+    if (state === 0 && show) {
+        setState(1)
+    }
+    if (state !== 0 && !show) {
+        setState(2)
+    }
+    return state === 0 ? null : (
+        <div
+            style={{ display: inline ? "inline-grid" : "grid" }}
+            class={state === 1 ? inClass : outClass}
+            onAnimationEnd={() => {
+                if (state !== 1) {
+                    setState(0)
+                }
+            }}
+        >
+            {children}
+        </div>
+    )
+}
+
 export function OptionTransition({
     children,
     inClass,
@@ -86,28 +122,30 @@ export function OptionTransition({
     outClass?: string
     inline?: boolean
 }) {
-    const old = useSignal(children)
-    const state = useSignal(true)
-    if (!old.value && children) {
-        state.value = true
+    const node = useRef(children)
+    const [state, setState] = useState(true)
+    const [_, setAux] = useState({})
+    if (!node.current && children) {
+        setState(true)
     }
-    if (old.value && !children) {
-        state.value = false
+    if (node.current && !children) {
+        setState(false)
     }
     if (children) {
-        old.value = children
+        node.current = children
     }
-    return old.value ? (
+    return node.current ? (
         <div
             style={{
                 display: inline ? "inline-grid" : "grid",
             }}
-            class={state.value ? inClass : outClass}
+            class={state ? inClass : outClass}
             onAnimationEnd={() => {
-                old.value = null
+                node.current = null
+                setAux({})
             }}
         >
-            {old.value}
+            {node.current}
         </div>
     ) : null
 }

@@ -7,7 +7,7 @@ export interface LinkProps extends HTMLProps<HTMLAnchorElement> {
     children?: ComponentChildren
 }
 
-export default function Link({
+export function Link({
     class: className,
     children,
     ...props

@@ -10,7 +10,7 @@ export interface BadgeProps extends Omit<HTMLProps<HTMLSpanElement>, "size"> {
     button?: boolean
 }
 
-export default function Badge({
+export function Badge({
     class: className,
     children,
     variant,

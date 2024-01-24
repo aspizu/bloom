@@ -20,6 +20,7 @@
         "vite": "^5.0.10"
     },
     "exports": {
+        "./components": "./src/components/index.ts",
         "./components/*": "./src/components/*.tsx",
         "./stylesheet": "./src/main.styl",
         "./itertools": "./src/itertools.ts",

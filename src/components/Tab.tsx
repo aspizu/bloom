@@ -10,7 +10,7 @@ export interface TabProps extends HTMLProps<HTMLButtonElement> {
     iconRight?: boolean
 }
 
-export default function Tab({
+export function Tab({
     class: className,
     children,
     active,

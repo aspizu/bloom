@@ -5,7 +5,7 @@ export interface InputProps extends HTMLProps<HTMLInputElement> {
     class?: string
 }
 
-export default function Input({
+export function Input({
     class: className,
     children,
     ...props

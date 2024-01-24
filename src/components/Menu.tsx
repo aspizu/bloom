@@ -5,7 +5,7 @@ export interface MenuProps extends HTMLProps<HTMLDivElement> {
     class?: string
 }
 
-export default function Menu({
+export function Menu({
     class: className,
     children,
     ...props

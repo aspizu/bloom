@@ -1,3 +1,3 @@
-export default function Flexpander() {
+export function Flexpander() {
     return <div class="flexpander"></div>
 }

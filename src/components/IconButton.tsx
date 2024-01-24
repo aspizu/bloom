@@ -12,7 +12,7 @@ export interface ButtonProps
     inverted?: boolean
 }
 
-export default function Button({
+export function IconButton({
     class: className,
     children,
     variant,

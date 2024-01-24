@@ -11,7 +11,7 @@ export interface ButtonProps extends HTMLProps<HTMLButtonElement> {
     iconRight?: boolean
 }
 
-export default function Button({
+export function Button({
     class: className,
     children,
     variant,

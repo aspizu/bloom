@@ -12,7 +12,7 @@ export interface ToggleButtonProps extends HTMLProps<HTMLButtonElement> {
     active?: boolean
 }
 
-export default function ToggleButton(props: ToggleButtonProps) {
+export function ToggleButton(props: ToggleButtonProps) {
     const {
         class: className,
         children,

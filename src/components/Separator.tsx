@@ -5,7 +5,7 @@ interface SeparatorProps extends HTMLProps<HTMLHRElement> {
     class?: string
 }
 
-export default function Separator({
+export function Separator({
     class: className,
     ...props
 }: SeparatorProps) {

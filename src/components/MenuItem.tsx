@@ -5,7 +5,7 @@ export interface MenuItemProps extends HTMLProps<HTMLButtonElement> {
     class?: string
 }
 
-export default function MenuItem({
+export function MenuItem({
     class: className,
     children,
     ...props

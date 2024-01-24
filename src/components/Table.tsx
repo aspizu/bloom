@@ -16,7 +16,7 @@ export interface TableProps<T> extends Omit<HTMLProps<HTMLDivElement>, "data"> {
     }
 }
 
-export default function Table<T>({
+export function Table<T>({
     class: className,
     data,
     columns,

@@ -5,7 +5,7 @@ import component from "../component"
 export interface BoxProps extends Omit<HTMLProps<HTMLDivElement>, "wrap"> {
     class?: string
     children?: ComponentChildren
-    column?: boolean
+    direction?: "row" | "column"
     padding?: 1 | 2 | 3 | 4
     gap?: 1 | 2 | 3 | 4
     vcenter?: boolean
@@ -15,10 +15,10 @@ export interface BoxProps extends Omit<HTMLProps<HTMLDivElement>, "wrap"> {
     wrapReverse?: boolean
 }
 
-export default function Box({
+export function Box({
     class: className,
     children,
-    column,
+    direction,
     padding,
     gap,
     vcenter,
@@ -34,11 +34,19 @@ export default function Box({
         padding && `padding-${padding}`,
         gap && `gap-${gap}`,
         surface,
-        { column, vcenter, hcenter, wrap, wrapReverse }
+        { column: direction === "column", vcenter, hcenter, wrap, wrapReverse },
     )
     return (
         <div {...props} class={$()}>
             {children}
         </div>
     )
+}
+
+export function Row(props: BoxProps) {
+    return Box({ direction: "row", ...props })
+}
+
+export function Col(props: BoxProps) {
+    return Box({ direction: "column", ...props })
 }

@@ -8,7 +8,7 @@ export interface RadioProps extends HTMLProps<HTMLDivElement> {
     onChange?: () => void
 }
 
-export default function Radio({
+export function Radio({
     class: className,
     active = false,
     disabled = false,
