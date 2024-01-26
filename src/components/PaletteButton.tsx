@@ -59,7 +59,6 @@ export const PaletteInput = forwardRef<PaletteInputHandle, PaletteInputProps>(
         useImperativeHandle(ref, paletteInputHandle(inputRef))
         return (
             <div
-                ref={divRef}
                 class={$()}
                 onClick={() => {
                     if (!inputRef.current) return
@@ -69,10 +68,12 @@ export const PaletteInput = forwardRef<PaletteInputHandle, PaletteInputProps>(
                     inputRef.current.click()
                     onInput?.(inputRef.current.value)
                 }}
-                style={{
-                    background: inputRef.current?.value || "#000000",
-                }}
             >
+                <div
+                    ref={divRef}
+                    class={$("color")}
+                    style={{ background: inputRef.current?.value || "#000000" }}
+                />
                 <input
                     ref={inputRef}
                     class={$("input")}

@@ -27,6 +27,7 @@
     background: white
     width: 1.5rem
     height: 1.5rem
+    border-top-left-radius: 0.3rem
     border-bottom-right-radius: 0.3rem
     transition: all 200ms easeInOutQuart
     opacity: 0
@@ -35,20 +36,33 @@
     opacity: 1
 
 .palette-input
+  display: flex
   position: relative
-  background: red
+  justify-content: center
+  align-items: center
+  position: relative
+  background: conic-gradient(
+    from 90deg,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red,
+    violet
+  )
   width: 3rem
   height: 3rem
-  border: none
   border-radius: 0.3rem
-  border: 0.1rem solid transparent
   transition: all 200ms easeInOutQuart
-  box-shadow:
+  shadow = \
     0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.1),
     0 0.1rem 0.25rem 0 rgba(0, 0, 0, 0.1)
+  box-shadow: shadow
   
   &:hover, &--active&
-    border-color: white
+    box-shadow: inset 0 0 0 0.08rem white, shadow
 
   &::after
     box()
@@ -64,28 +78,23 @@
     background: white
     width: 1.5rem
     height: 1.5rem
+    border-top-left-radius: 0.3rem
     border-bottom-right-radius: 0.3rem
     transition: all 200ms easeInOutQuart
     opacity: 0
 
-  &::before
-    box()
-    color: rgba(0, 0, 0, 0.5)
-    justify-content: center
-    align-items: center
-    position: absolute
-    bottom: 0
-    right: 0
-    materialSymbolsOutlined()
-    font-size: 1.5rem
-    content: "tune"
-    width: 1.75rem
-    height: 1.75rem
-    border-bottom-right-radius: 0.3rem
-    transition: all 200ms easeInOutQuart
+  &__color
+    width: 2rem
+    height: 2rem
+    // box-shadow: 0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.5), 0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.1)
+    border-radius: 0.3rem
   
   &__input
+    position: absolute
     opacity: 0
+    width: 100%
+    height: 100%
+    border: none
 
   &--active&::after
     opacity: 1

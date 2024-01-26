@@ -1,0 +1,26 @@
+@keyframes skeleton-background
+  50%
+    background: transparentify(white, 0.2)
+
+.skeleton
+  background: transparentify(white, 0.1)
+  animation: 2s linear infinite skeleton-background
+  border-radius: 0.3rem
+  
+  &--text&
+    height: 1rem
+
+  &--input&
+    height: 2.25rem
+
+  &--width-1&
+    width: 20%
+
+  &--width-2&
+    width: 40%
+
+  &--width-3&
+    width: 60%
+
+  &--width-4&
+    width: 80%

@@ -10,7 +10,9 @@ export interface BoxProps extends Omit<HTMLProps<HTMLDivElement>, "wrap"> {
     gap?: 1 | 2 | 3 | 4
     vcenter?: boolean
     hcenter?: boolean
-    surface?: "card" | "card2" | "modal" | "warn" | "accent"
+    vexpand?: boolean
+    hexpand?: boolean
+    surface?: "card" | "card2" | "modal" | "warn" | "accent" | "skeleton"
     wrap?: boolean
     wrapReverse?: boolean
 }
@@ -23,6 +25,8 @@ export function Box({
     gap,
     vcenter,
     hcenter,
+    vexpand,
+    hexpand,
     surface,
     wrap,
     wrapReverse,
@@ -34,7 +38,15 @@ export function Box({
         padding && `padding-${padding}`,
         gap && `gap-${gap}`,
         surface,
-        { column: direction === "column", vcenter, hcenter, wrap, wrapReverse },
+        {
+            column: direction === "column",
+            vcenter,
+            hcenter,
+            vexpand,
+            hexpand,
+            wrap,
+            wrapReverse,
+        }
     )
     return (
         <div {...props} class={$()}>
